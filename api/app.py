@@ -61,7 +61,6 @@ def delete_image(name):
 
 @app.route('/update_image/<name>', methods=['PUT'])
 def update_image(name):
-	print("HERE")
 	labels = request.json['labels']
 	url = request.json['url']
 
@@ -71,39 +70,6 @@ def update_image(name):
 		return json_response(str(e), 400)
 
 	return redirect('/')
-
-
-"""
-@app.route('/search_name', methods=['GET', 'POST'])
-def search_name():
-	if request.method == 'POST':
-		parameter = request.form['parameter']
-
-		result = Image.search_name(col, parameter)
-
-		return load_images_for_display(result)
-	else:
-		return render_template('search_name.html')
-
-
-@app.route('/search_image', methods=['GET', 'POST'])
-def search_image():
-	if request.method == 'POST':
-		name = request.form['name']
-
-		result = Image.search_image(col, name)
-
-		return load_images_for_display(result)
-	else:
-		return render_template('search_image.html')
-
-
-def load_images_for_display(results):
-	images = Image.get_images_ready_for_display(results)
-
-	return render_template("gallery.html", images=images)
-
-"""
 
 def json_response(payload, status=200):
   return (json.dumps(payload), status, {'content-type': 'application/json'})
