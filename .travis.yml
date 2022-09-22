@@ -7,4 +7,5 @@ install:
   - pip install -r api/requirements.txt 
 
 script:
-  - python -m unittest api/test_image.py
+  - cd api
+  - python -m unittest test_image.py

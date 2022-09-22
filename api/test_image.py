@@ -92,7 +92,6 @@ class TestImage(unittest.TestCase):
 	def test_update_in_db_success(self):
 		Image.update_in_db(col, "Greenery", self.img_labels, self.img_url)
 		assert(dict(Image.get_by_name(col, "Greenery"))["url"] == self.img_url)
-		print(dict(Image.get_by_name(col, "Greenery"))["labels"])
 		assert(dict(Image.get_by_name(col, "Greenery"))["labels"] == self.img_labels.split(','))
 
 	def test_update_in_db_failure(self):
