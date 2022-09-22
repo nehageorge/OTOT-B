@@ -1,20 +1,18 @@
 language: python
+
 python:
-<<<<<<< Updated upstream
-  - 3.8.9
-
-
-script:
-  - python -m unittest api/test_image.py
-=======
 - 3.6.1
+
 services:
 - mongodb
+
 install:
 - pip install -r api/requirements.txt
+
 script:
 - cd api
 - python -m unittest test_image.py
+
 deploy:
   provider: elasticbeanstalk
   access_key_id: AKIAVXEWKM366LQKCSWE
@@ -27,4 +25,3 @@ deploy:
   on:
     repo: nehageorge/OTOT-B
   skip_cleanup: 'true'
->>>>>>> Stashed changes
