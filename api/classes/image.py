@@ -86,5 +86,4 @@ class Image():
 	@staticmethod
 	def load_all_images(col):
 		result = col.find()
-		print(result)
 		return result

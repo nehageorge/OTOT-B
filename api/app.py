@@ -61,7 +61,6 @@ def delete_image(name):
 
 @app.route('/update_image/<name>', methods=['PUT'])
 def update_image(name):
-	print("HERE")
 	labels = request.json['labels']
 	url = request.json['url']
 
