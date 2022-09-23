@@ -24,8 +24,8 @@ deploy:
   bucket_name: otot-neha
   on:
     repo: nehageorge/OTOT-B
-  branches:
-    only:
-      - master
-      - deploy
+    branches:
+      only:
+        - master
+        - deploy
   skip_cleanup: 'true'
