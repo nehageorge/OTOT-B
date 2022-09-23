@@ -107,32 +107,6 @@ class TestImage(unittest.TestCase):
 	def test_load_all_images(self):
 		time.sleep(10)
 		assert(len(list(Image.load_all_images(col))) == self.total_image_len)
-"""
-	def test_search_name(self):
-		time.sleep(10)
-		result = Image.search_name(col, "N")
-		assert(result.count_documents() == 3)
-
-		result = Image.search_name(col, "Runner")
-		assert(result.count_documents() == 1)
-
-		result = Image.search_name(col, "XYZ")
-		assert(result.count_documents() == 0)
-
-		result = Image.search_name(col, "fitness")
-		assert(result.count_documents() == 2)
-
-	def test_search_image(self):
-		time.sleep(10)
-		result = Image.search_image(col, "Dumbbells")
-		assert(len(result) == 1)
-
-		result = Image.search_image(col, "Runner")
-		assert(len(result) == 2)
-
-		result = Image.search_image(col, "Parliament")
-		assert(len(result) == 0) 
-"""
 
 if __name__ == '__main__':
     unittest.main()
