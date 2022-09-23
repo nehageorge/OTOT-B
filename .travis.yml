@@ -21,7 +21,7 @@ deploy:
   region: us-east-1
   app: OTOT-B
   env: Ototb-env
-  bucket_name: otot-neha
+  bucket_name: otot-c
   on:
     repo: nehageorge/OTOT-B
   skip_cleanup: 'true'
