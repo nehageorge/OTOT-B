@@ -1,27 +1,19 @@
 language: python
-
 python:
 - 3.6.1
-
 services:
 - mongodb
-
 install:
 - pip install -r api/requirements.txt
-
 script:
 - cd api
 - python -m unittest test_image.py
-
 deploy:
-  provider: elasticbeanstalk
-  access_key_id: AKIAVXEWKM366LQKCSWE
+  provider: gcs
+  access_key_id: GOOGVDTWA4A3RIVCRQYLG4IP
   secret_access_key:
-    secure: MOoWITLPhecjZabvQN4vzJpKQgxRUpd4jSYdwo40vcOaEckMCXSHE3c2Q2KEwYbIwnOhbHD3/tQajpAHfNwyiFsiVRGT+ayY242V97w13L6cDErw7h5lyDpQ7I/E1o4NMcVu+P/ZgxGpjPkzTz14mStDcru5izr93Z0VYlp+Hb+jgJJIaSzL1XY+2AcZkelss0JINv8p5vPg1uqRcEOheBv1T50n5Eq2OOzubYOmksKrsbWqizaATQf3/j+8NATy6t1vqqR2L8//Tab2o+njIvPTMbb/F4H4tS9a8+fajpHoNxvkZtAnH05PEg0N0YfPpQeCkq4ncLD3pRGmD7S/Qitez1UDu7ox2/vn+ryp1sXh1xGohjsqNrUTf1BqRlrQB9ZODiUgFKaOboq3Xj3XpLL0k5eV0K2b0dWodcndSDAQ3fgVsSL47P1Cal2EBRQBsU4YadeNu2T6DUwkJ3Hc+rqgtpd4wbGqOGCE+sRqveSSxd8JHLwg0/8DJhbhPjkCL4pG1KV3Uqi0RKjcva8JXxmYHywp4TgEPGYapgJgfkugfcIsyLjWh979hA2AOhaRNkH4u1xj7p1V1/855GA7sPAhqXYpigAQrvgwm9kOSY/l9ThLfLQ8/ZMFkwuxXTN/T0Unj//1Xo0hUHZ8Baknun2v2nfKqSIHsdCmmETN20w=
-  region: us-east-1
-  app: OTOT-B
-  env: Ototb-env
-  bucket_name: otot-c
+    secure: MXMk3ULl2R1cYoJrF7H451PFCPCBJacIsnDjLzHBepyvpIkMVtx06YAIfE5A5vCRuLJyUbQaxQ1HelIG/+KxGhlwH3h+lE6rYqZ61cV6l2ry1SGsSP40CBkqjbbjeaAr7T/fF9SPnRNeWmi7jMIGSRE8bCoVNtkb8zPuwHaI1Oj/ebs3FDEcIOUow6CZEnQJKRWebHqaStcrB6MTUMm/+jDjvR3Pkkq6HesBg21pvz/s08NX8EZAMlBIHyH8vh4fKjbOT9WYEwdNL69uAB6+b4OObe2eWXHvxLc6kaMUY0kJYQc9F0YGgHy7yVe5DBcbBoSoPrSxiLc47aq5xkwDkMAhGwjgjhMltR06SGmFrzwmntB2pdyNU8LrU8Q1xRvhbTOqi74O1JYglf0py2ZJ2U6ZWXqv0eoTZVRV1Or2ivf4FxExYtOCJ8zM4kjf5TxKBlx1qOvwjgMV3hKYgr/02sN8SC2Avw9x769RTUWFx3SM3nWrbjdXdhsGYBBG9oYpYxDML9cv9u4kF2DCUj0V8YkPOY1RUrFYMcAFHS8E7kbgAPMzmJmHaYdTAwmsTTpo6MLSsGwLgKzFcmCC1uyETKjxiN+eYw+Aqy/1+SAmAMl1YoE7COJjPAwwwBJc2aB+J7uAWaA53FPQdflMPxiIPSFBYma126X/RgooxYJ7oyY=
+  bucket: us.artifacts.otot-b-363407.appspot.com
   on:
     repo: nehageorge/OTOT-B
   skip_cleanup: 'true'
