@@ -14,7 +14,7 @@ function Home() {
       res.json().then((data) => {
         setAllImages(data.map((img) => img[1]))
         if (search.length == 0) {
-          setImages(allImages);
+          setImages(data.map((img) => img[1]))
         }
       })
     );

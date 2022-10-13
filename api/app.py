@@ -36,7 +36,7 @@ def new_image():
 		except Exception as e:
 			return json_response(str(e), 400)
 
-		return redirect('/')
+		return redirect('/index')
 	else:
 		return json_response("")
 
@@ -69,7 +69,7 @@ def update_image(name):
 	except Exception as e:
 		return json_response(str(e), 400)
 
-	return redirect('/')
+	return redirect('/index')
 
 def json_response(payload, status=200):
   return (json.dumps(payload), status, {'content-type': 'application/json'})
