@@ -1,5 +1,12 @@
 click
 dnspython
+google-api-core
+google-auth
+google-cloud-core
+google-cloud-storage
+google-crc32c
+google-resumable-media
+googleapis-common-protos
 Flask
 importlib-metadata
 itsdangerous
