@@ -2,7 +2,7 @@ import pymongo
 from urllib.parse import urlparse
 
 class Image():
-	def __init__(self, name, labels, url):
+	def __init__(self, name, labels, url, user):
 		if not(name and labels and url):
 			raise ValueError("Input validation failed. Name, url, and labels required.")
 		if not urlparse(url).scheme:
@@ -11,6 +11,7 @@ class Image():
 		self.name = name
 		self.labels = [label.lower().strip() for label in labels.split(',')]
 		self.url = url
+		self.user = user
 
 	@staticmethod
 	def get_by_name(col, name):
@@ -25,7 +26,8 @@ class Image():
 		document = {
 			'name': self.name,
 			'labels': self.labels,
-			'url': self.url
+			'url': self.url,
+			'user': self.user
 		}
 
 		result = col.insert_one(document)
@@ -85,6 +87,6 @@ class Image():
 		return images
 
 	@staticmethod
-	def load_all_images(col):
-		result = col.find()
+	def load_all_images(col, user):
+		result = col.find({'user': user})
 		return result

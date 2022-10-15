@@ -24,6 +24,8 @@ function Home() {
 
   const addHandler = () => navigate("/new_image");
 
+  const signUpHandler = () => navigate("/signup");
+
   function handleSearch(newSearch) {
     setSearch(newSearch)
     if (newSearch.length == 0) {
@@ -54,6 +56,8 @@ function Home() {
       <h1>
         <b>Neha George's Image Repository</b>
       </h1>
+      <Button onClick={signUpHandler}>Sign up</Button>
+      <br></br>
       <Button onClick={addHandler}>Add new image</Button>
       <br></br>
       <TextField
