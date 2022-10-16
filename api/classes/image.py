@@ -77,6 +77,7 @@ class Image():
 	@staticmethod
 	def get_images_ready_for_display(results):
 		try:
+			results = list(results)
 			images = [[result['url'], result['name']] for result in results]
 		except:
 			images = [[results['url'], results['name']]]
