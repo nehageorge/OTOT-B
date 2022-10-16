@@ -1,4 +1,3 @@
-from bson.json_util import dumps
 from urllib.parse import urlparse
 from api.classes.image import Image
 from flask import Flask, request, redirect
@@ -7,6 +6,7 @@ import pymongo
 import api.databaseconfig as cfg
 import sys
 import json
+from bson.json_util import dumps
 
 app = Flask(__name__)
 
