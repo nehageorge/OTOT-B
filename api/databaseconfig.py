@@ -1,1 +1,1 @@
-client = "mongodb+srv://neha2george:lolnowhaha@cluster0.mvdarcg.mongodb.net/?retryWrites=true&w=majority"
+client = 'mongodb://127.0.0.1:27017'
