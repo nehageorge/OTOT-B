@@ -7,14 +7,19 @@ import api.databaseconfig as cfg
 import sys
 import json
 from bson.json_util import dumps
+import requests
+from flask_caching import Cache  # Import Cache from flask_caching module
 
 app = Flask(__name__)
+app.config.from_object('config.BaseConfig')  # Set the configuration variables to the flask application
+cache = Cache(app)  # Initialize Cache
 
 client = pymongo.MongoClient(cfg.client, connect=False)
 db = client.NUS
 col = db["ImageRepo"]
 
 
+@cache.cached(timeout=30, query_string=True)
 @app.route('/index', methods=['GET'])
 def index():
 	all_images = Image.load_all_images(col)
@@ -76,4 +81,4 @@ def json_response(payload, status=200):
 
 
 if __name__ == '__main__':
-	app.run()
+	app.run(host='0.0.0.0', port=5000)

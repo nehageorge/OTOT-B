@@ -1,7 +1,7 @@
-bson
 click
 dnspython
 Flask
+flask_caching
 importlib-metadata
 itsdangerous
 Jinja2
@@ -9,6 +9,8 @@ MarkupSafe
 pymongo
 python-dateutil
 python-dotenv
+requests
+redis
 setuptools
 six
 Werkzeug

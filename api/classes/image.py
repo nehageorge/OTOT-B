@@ -1,5 +1,5 @@
-import pymongo
 from urllib.parse import urlparse
+import pymongo
 
 class Image():
 	def __init__(self, name, labels, url):

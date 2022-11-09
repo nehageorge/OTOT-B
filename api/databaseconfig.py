@@ -1,1 +1,1 @@
-client = 'mongodb://127.0.0.1:27017'
+client = 'mongodb://mongodb:27017/'
